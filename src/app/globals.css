@@ -1,97 +1,19 @@
 @import "tailwindcss";
+@import "../styles/colors.css";
 
 :root {
-  --color-bg: #0f0f11;
-  --color-surface: rgba(255, 255, 255, 0.03);
-  --color-border: rgba(255, 255, 255, 0.07);
-  --color-text: #f5f5f5;
-  --color-text-muted: #71717a;
-  --color-text-subtle: #52525b;
-  --color-accent: #6ebbe7;
-  --color-accent-amber: #f59e0b;
-
-  --font-display: var(--font-syne), 'Syne', system-ui, sans-serif;
-  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   color: var(--color-text);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100dvh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display);
+/* Oculta la barra de scroll en los carruseles horizontales (categorías, ofertas) */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
-
-a {
-  color: inherit;
-}
-
-button {
-  font-family: var(--font-body);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* Focus visible */
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Selection */
-::selection {
-  background: rgba(110, 231, 183, 0.25);
-  color: #f5f5f5;
+.scrollbar-hidden {
+  scrollbar-width: none;
 }

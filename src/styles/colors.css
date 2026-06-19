@@ -1,0 +1,45 @@
+/**
+ * 🎨 PALETA DE COLORES DEL PROYECTO
+ * ---------------------------------------------------------------
+ * Este es el ÚNICO archivo que debes tocar para cambiar el tema
+ * de colores de toda la app. Gracias a Tailwind v4, cada variable
+ * "--color-*" genera automáticamente sus clases de utilidad:
+ *
+ *   --color-primary   ->  bg-primary, text-primary, border-primary...
+ *   --color-accent    ->  bg-accent, text-accent, ring-accent...
+ *
+ * No necesitas editar ningún componente ni clase: cambia el hex
+ * aquí y se actualiza en todo el sitio.
+ * ---------------------------------------------------------------
+ */
+
+@theme {
+  /* Marca / acciones principales — inspirado en el achiote yucateco */
+  --color-primary: #8533af;
+  --color-primary-dark: #9b3f22;
+  --color-primary-light: #e8c7b8;
+
+  /* Acciones secundarias / enlaces — inspirado en los cenotes */
+  --color-secondary: #0f7173;
+  --color-secondary-dark: #0b5456;
+  --color-secondary-light: #bfe3e2;
+
+  /* Ofertas, descuentos, badges — inspirado en el maíz */
+  --color-accent: #3483fa;
+  --color-accent-dark: #d6891c;
+
+  /* Fondos y superficies */
+  --color-background: #ebebeb;
+  --color-surface: #ffffff;
+  --color-border: #e7e0d4;
+
+  /* Texto */
+  --color-text: #2b2521;
+  --color-text-muted: #6b6358;
+
+  /* Estados */
+  --color-success: #00a650;
+  --color-warning: #e8a33d;
+  --color-danger: #d64545;
+  --color-info: #2d7dd2;
+}

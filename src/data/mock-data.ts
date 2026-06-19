@@ -1,184 +1,198 @@
-export interface Comercio {
-  id: string;
-  slug?: string;
+export type Categoria = {
+  slug: string;
   nombre: string;
-  categoria: string;
+  icono: string;
+};
+
+export type Comercio = {
+  slug: string;
+  nombre: string;
+  categoriaSlug: string;
   descripcion: string;
-  rating: number;
-  reseñas: number;
-  precio: string; // "$" | "$$" | "$$$"
   imagen: string;
-  badge?: "Nuevo" | "Trending" | "Top" | "Oferta";
-  tags: string[];
-  abierto: boolean;
-  distancia: string;
-}
+  rating: number;
+  ubicacion: string;
+  destacado: boolean;
+};
 
-export interface Categoria {
+export type Oferta = {
   id: string;
-  nombre: string;
-  emoji: string;
-  color: string;
-  cantidad: number;
-  descripcion: string;
-}
+  comercioSlug: string;
+  titulo: string;
+  descuento: number;
+  imagen: string;
+  vigenciaHasta: string;
+};
 
-export const COMERCIOS_DESTACADOS: Comercio[] = [
+export type Banner = {
+  id: string;
+  titulo: string;
+  subtitulo: string;
+  cta: string;
+  href: string;
+  imagen: string;
+};
+
+export const categorias: Categoria[] = [
+  { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️" },
+  { slug: "cafeterias", nombre: "Cafeterías", icono: "☕" },
+  { slug: "panaderias", nombre: "Panaderías", icono: "🥖" },
+  { slug: "ropa", nombre: "Ropa", icono: "👕" },
+  { slug: "farmacias", nombre: "Farmacias", icono: "💊" },
+  { slug: "ferreterias", nombre: "Ferreterías", icono: "🔧" },
+  { slug: "artesanias", nombre: "Artesanías", icono: "🧶" },
+  { slug: "tecnologia", nombre: "Tecnología", icono: "💻" },
+];
+
+export const comercios: Comercio[] = [
   {
-    id: "1",
-    slug: "taquería_el_jaguar",
-    nombre: "Taquería El Jaguar",
-    categoria: "Comida",
-    descripcion: "Tacos de cochinita pibil y panuchos auténticos del centro de Mérida, receta familiar de tres generaciones.",
-    rating: 4.9,
-    reseñas: 342,
-    precio: "$",
-    imagen: "🌮",
-    badge: "Top",
-    tags: ["Yucateco", "Sin gluten", "Para llevar"],
-    abierto: true,
-    distancia: "0.3 km",
-  },
-  {
-    id: "2",
-    slug: "vintage_y_co",
-    nombre: "Vintage & Co.",
-    categoria: "Moda",
-    descripcion: "Ropa vintage seleccionada a mano, accesorios únicos y piezas de época de los 70s y 80s.",
-    rating: 4.7,
-    reseñas: 189,
-    precio: "$$",
-    imagen: "👗",
-    badge: "Trending",
-    tags: ["Vintage", "Sustentable", "Segunda mano"],
-    abierto: true,
-    distancia: "1.1 km",
-  },
-  {
-    id: "3",
-    slug: "café_cenote",
-    nombre: "Café Cenote",
-    categoria: "Café",
-    descripcion: "Especialidad en café de origen mexicano, ambiente relajado con vista al jardín interior.",
+    slug: "la-socorrito",
+    nombre: "La Socorrito",
+    categoriaSlug: "restaurantes",
+    descripcion: "Cocina yucateca tradicional con más de 30 años de historia en el centro de Mérida.",
+    imagen: "https://picsum.photos/seed/la-socorrito/640/420",
     rating: 4.8,
-    reseñas: 521,
-    precio: "$$",
-    imagen: "☕",
-    badge: "Trending",
-    tags: ["Specialty coffee", "Wifi", "Vegetariano"],
-    abierto: true,
-    distancia: "0.8 km",
+    ubicacion: "Centro, Mérida",
+    destacado: true,
   },
   {
-    id: "4",
-    slug: "librería_papel_tinta",
-    nombre: "Librería Papel & Tinta",
-    categoria: "Cultura",
-    descripcion: "Libros nuevos y de segunda mano, zines independientes y eventos literarios cada semana.",
+    slug: "panificadora-montejo",
+    nombre: "Panificadora Montejo",
+    categoriaSlug: "panaderias",
+    descripcion: "Pan dulce recién horneado todas las mañanas. Famosos por sus marquesitas.",
+    imagen: "https://picsum.photos/seed/panificadora-montejo/640/420",
     rating: 4.6,
-    reseñas: 97,
-    precio: "$",
-    imagen: "📚",
-    badge: "Nuevo",
-    tags: ["Independiente", "Eventos", "Usado"],
-    abierto: false,
-    distancia: "2.0 km",
+    ubicacion: "García Ginerés, Mérida",
+    destacado: true,
   },
   {
-    id: "5",
-    slug: "studio_kaan",
-    nombre: "Studio Kaan",
-    categoria: "Bienestar",
-    descripcion: "Yoga, meditación y terapias holísticas. Clases matutinas y vespertinas con instructores certificados.",
+    slug: "cafe-cenote",
+    nombre: "Café Cenote",
+    categoriaSlug: "cafeterias",
+    descripcion: "Café de especialidad de la región y repostería artesanal en un patio fresco.",
+    imagen: "https://picsum.photos/seed/cafe-cenote/640/420",
+    rating: 4.7,
+    ubicacion: "Itzimná, Mérida",
+    destacado: true,
+  },
+  {
+    slug: "telar-maya",
+    nombre: "Telar Maya",
+    categoriaSlug: "artesanias",
+    descripcion: "Bordados y hamacas hechas a mano por artesanas de la región.",
+    imagen: "https://picsum.photos/seed/telar-maya/640/420",
     rating: 4.9,
-    reseñas: 214,
-    precio: "$$",
-    imagen: "🧘",
-    badge: "Top",
-    tags: ["Yoga", "Meditación", "Online"],
-    abierto: true,
-    distancia: "1.5 km",
+    ubicacion: "Santiago, Mérida",
+    destacado: true,
   },
   {
-    id: "6",
-    slug: "ferretería_don_pepe",
-    nombre: "Ferretería Don Pepe",
-    categoria: "Hogar",
-    descripcion: "Todo para tu hogar y taller. Herramientas, materiales de construcción y asesoría personalizada.",
+    slug: "farmacia-del-paseo",
+    nombre: "Farmacia del Paseo",
+    categoriaSlug: "farmacias",
+    descripcion: "Farmacia de barrio con servicio a domicilio y consulta médica de bajo costo.",
+    imagen: "https://picsum.photos/seed/farmacia-del-paseo/640/420",
+    rating: 4.4,
+    ubicacion: "Paseo de Montejo, Mérida",
+    destacado: false,
+  },
+  {
+    slug: "ferreteria-yum-kin",
+    nombre: "Ferretería Yum Kin",
+    categoriaSlug: "ferreterias",
+    descripcion: "Todo para construcción y hogar, con asesoría personalizada desde 1985.",
+    imagen: "https://picsum.photos/seed/ferreteria-yum-kin/640/420",
+    rating: 4.3,
+    ubicacion: "Col. México, Mérida",
+    destacado: false,
+  },
+  {
+    slug: "boutique-xtabay",
+    nombre: "Boutique Xtabay",
+    categoriaSlug: "ropa",
+    descripcion: "Ropa y accesorios de diseñadores locales con inspiración yucateca.",
+    imagen: "https://picsum.photos/seed/boutique-xtabay/640/420",
     rating: 4.5,
-    reseñas: 430,
-    precio: "$",
-    imagen: "🔧",
-    badge: "Oferta",
-    tags: ["Herramientas", "Construcción", "Expertos"],
-    abierto: true,
-    distancia: "0.6 km",
+    ubicacion: "Centro, Mérida",
+    destacado: true,
+  },
+  {
+    slug: "tech-yuc",
+    nombre: "TechYuc",
+    categoriaSlug: "tecnologia",
+    descripcion: "Reparación de celulares y laptops, venta de accesorios y soporte técnico.",
+    imagen: "https://picsum.photos/seed/tech-yuc/640/420",
+    rating: 4.2,
+    ubicacion: "Altabrisa, Mérida",
+    destacado: false,
   },
 ];
 
-export const CATEGORIAS: Categoria[] = [
+export const ofertas: Oferta[] = [
   {
-    id: "comida",
-    nombre: "Comida & Bebida",
-    emoji: "🍽️",
-    color: "#F59E0B",
-    cantidad: 248,
-    descripcion: "Restaurantes, cafés, antojitos",
+    id: "of-1",
+    comercioSlug: "la-socorrito",
+    titulo: "Comida del día 2x1",
+    descuento: 50,
+    imagen: "https://picsum.photos/seed/oferta-socorrito/480/320",
+    vigenciaHasta: "2026-06-30",
   },
   {
-    id: "moda",
-    nombre: "Moda & Estilo",
-    emoji: "👔",
-    color: "#EC4899",
-    cantidad: 134,
-    descripcion: "Ropa, zapatos, accesorios",
+    id: "of-2",
+    comercioSlug: "panificadora-montejo",
+    titulo: "Docena de marquesitas",
+    descuento: 20,
+    imagen: "https://picsum.photos/seed/oferta-montejo/480/320",
+    vigenciaHasta: "2026-06-25",
   },
   {
-    id: "tecnologia",
-    nombre: "Tecnología",
-    emoji: "💻",
-    color: "#6EE7B7",
-    cantidad: 89,
-    descripcion: "Gadgets, reparaciones, software",
+    id: "of-3",
+    comercioSlug: "cafe-cenote",
+    titulo: "Café + postre",
+    descuento: 15,
+    imagen: "https://picsum.photos/seed/oferta-cenote/480/320",
+    vigenciaHasta: "2026-06-28",
   },
   {
-    id: "bienestar",
-    nombre: "Bienestar",
-    emoji: "🌿",
-    color: "#34D399",
-    cantidad: 102,
-    descripcion: "Spa, gym, salud mental",
+    id: "of-4",
+    comercioSlug: "boutique-xtabay",
+    titulo: "Temporada de rebajas",
+    descuento: 30,
+    imagen: "https://picsum.photos/seed/oferta-xtabay/480/320",
+    vigenciaHasta: "2026-07-05",
   },
   {
-    id: "hogar",
-    nombre: "Hogar & Deco",
-    emoji: "🏠",
-    color: "#A78BFA",
-    cantidad: 176,
-    descripcion: "Muebles, decoración, hogar",
+    id: "of-5",
+    comercioSlug: "tech-yuc",
+    titulo: "Revisión gratis de tu equipo",
+    descuento: 100,
+    imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
+    vigenciaHasta: "2026-06-22",
+  },
+];
+
+export const banners: Banner[] = [
+  {
+    id: "banner-1",
+    titulo: "Apoya el comercio local",
+    subtitulo: "Descubre negocios cerca de ti en Mérida",
+    cta: "Explorar comercios",
+    href: "#destacados",
+    imagen: "https://picsum.photos/seed/banner-comercio-local/1200/420",
   },
   {
-    id: "cultura",
-    nombre: "Arte & Cultura",
-    emoji: "🎨",
-    color: "#F87171",
-    cantidad: 63,
-    descripcion: "Galerías, libros, música",
+    id: "banner-2",
+    titulo: "Hasta 50% de descuento",
+    subtitulo: "Ofertas de la semana en restaurantes y cafeterías",
+    cta: "Ver ofertas",
+    href: "#ofertas",
+    imagen: "https://picsum.photos/seed/banner-ofertas/1200/420",
   },
   {
-    id: "servicios",
-    nombre: "Servicios",
-    emoji: "⚙️",
-    color: "#60A5FA",
-    cantidad: 211,
-    descripcion: "Profesionales, talleres, consultoría",
-  },
-  {
-    id: "mascotas",
-    nombre: "Mascotas",
-    emoji: "🐾",
-    color: "#FBBF24",
-    cantidad: 47,
-    descripcion: "Veterinarias, grooming, accesorios",
+    id: "banner-3",
+    titulo: "¿Tienes un negocio?",
+    subtitulo: "Publícalo gratis y llega a más clientes",
+    cta: "Publica tu comercio",
+    href: "#",
+    imagen: "https://picsum.photos/seed/banner-publica/1200/420",
   },
 ];

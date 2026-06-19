@@ -1,26 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import "./globals.css";
 
-const inter = Inter({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
 });
 
-const syne = Syne({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Zeekers — Descubre comercios locales",
-  description:
-    "Encuentra los mejores comercios locales verificados: restaurantes, tiendas, servicios y más, todo en un solo lugar.",
-  keywords: ["comercios locales", "directorio", "Mérida", "negocios"],
+  title: "ComerciosYuc — Comercio local de Ticul",
+  description: "Descubre, apoya y descubre ofertas de comercios locales en Mérida, Yucatán.",
 };
 
 export default function RootLayout({
@@ -29,10 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${syne.variable}`}>
-      <body>
+    <html lang="es">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col`}>
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
