@@ -19,7 +19,11 @@ export type Oferta = {
   id: string;
   comercioSlug: string;
   titulo: string;
+  precioOriginal: number;
   descuento: number;
+  cuotas?: { meses: number; monto: number };
+  entrega: string;
+  entregaDestacada?: boolean;
   imagen: string;
   vigenciaHasta: string;
 };
@@ -132,7 +136,9 @@ export const ofertas: Oferta[] = [
     id: "of-1",
     comercioSlug: "la-socorrito",
     titulo: "Comida del día 2x1",
+    precioOriginal: 180,
     descuento: 50,
+    entrega: "Recoge en el restaurante",
     imagen: "https://picsum.photos/seed/oferta-socorrito/480/320",
     vigenciaHasta: "2026-06-30",
   },
@@ -140,31 +146,41 @@ export const ofertas: Oferta[] = [
     id: "of-2",
     comercioSlug: "panificadora-montejo",
     titulo: "Docena de marquesitas",
+    precioOriginal: 150,
     descuento: 20,
+    entrega: "Recoge en tienda hoy",
     imagen: "https://picsum.photos/seed/oferta-montejo/480/320",
     vigenciaHasta: "2026-06-25",
   },
   {
     id: "of-3",
     comercioSlug: "cafe-cenote",
-    titulo: "Café + postre",
+    titulo: "Café de especialidad + postre del día",
+    precioOriginal: 120,
     descuento: 15,
+    entrega: "Disponible para llevar",
     imagen: "https://picsum.photos/seed/oferta-cenote/480/320",
     vigenciaHasta: "2026-06-28",
   },
   {
     id: "of-4",
     comercioSlug: "boutique-xtabay",
-    titulo: "Temporada de rebajas",
+    titulo: "Temporada de rebajas en ropa de diseñador local",
+    precioOriginal: 899,
     descuento: 30,
+    cuotas: { meses: 3, monto: 209.77 },
+    entrega: "Envío gratis",
+    entregaDestacada: true,
     imagen: "https://picsum.photos/seed/oferta-xtabay/480/320",
     vigenciaHasta: "2026-07-05",
   },
   {
     id: "of-5",
     comercioSlug: "tech-yuc",
-    titulo: "Revisión gratis de tu equipo",
+    titulo: "Revisión y diagnóstico de tu equipo",
+    precioOriginal: 250,
     descuento: 100,
+    entrega: "Servicio en sucursal",
     imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
     vigenciaHasta: "2026-06-22",
   },

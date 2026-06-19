@@ -14,6 +14,9 @@ export default async function ComercioPage({ params }: ComercioPageProps) {
   const { slug } = await params;
   const comercio = getComercioBySlug(slug);
 
+  if (!comercio) {
+    notFound();
+  }
 
   const ofertas = getOfertasPorComercio(comercio.slug);
 

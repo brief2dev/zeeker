@@ -7,6 +7,7 @@ type SectionHeaderProps = {
   href?: string;
   hrefLabel?: string;
   id?: string;
+  rightSlot?: React.ReactNode;
 };
 
 export default function SectionHeader({
@@ -16,6 +17,7 @@ export default function SectionHeader({
   href,
   hrefLabel = "Ver todo",
   id,
+  rightSlot,
 }: SectionHeaderProps) {
   return (
     <div id={id} className="flex items-end justify-between gap-4 mb-5">
@@ -31,13 +33,17 @@ export default function SectionHeader({
         )}
       </div>
 
-      {href && (
-        <Link
-          href={href}
-          className="hidden sm:inline-block text-sm font-semibold text-secondary hover:text-secondary-dark whitespace-nowrap"
-        >
-          {hrefLabel} →
-        </Link>
+      {rightSlot ? (
+        rightSlot
+      ) : (
+        href && (
+          <Link
+            href={href}
+            className="hidden sm:inline-block text-sm font-semibold text-secondary hover:text-secondary-dark whitespace-nowrap"
+          >
+            {hrefLabel} →
+          </Link>
+        )
       )}
     </div>
   );

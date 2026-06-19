@@ -9,7 +9,7 @@ export default function ComercioCard({ comercio }: ComercioCardProps) {
   return (
     <Link
       href={`/comercio/${comercio.slug}`}
-      className="group block bg-surface border border-border rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
+      className="group block bg-surface border border-border rounded-lg overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}

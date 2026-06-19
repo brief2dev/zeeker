@@ -17,6 +17,7 @@ export default function Home() {
   const comercios = getComercios();
   const comerciosDestacados = getComerciosDestacados();
 
+  
   return (
     <>
       <PromoBanner banners={banners} />

@@ -9,11 +9,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-primary text-white shadow-sm">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="flex items-center gap-3 py-3">
+        <div className="flex items-center gap-3 py-5">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">🌿</span>
-            <span className="font-extrabold text-lg tracking-tight">
+            <span className="text-3xl">🌿</span>
+            <span className="font-extrabold text-xl tracking-tight">
               Comercios<span className="text-accent">Yuc</span>
             </span>
           </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
               <input
                 type="search"
                 placeholder="Busca comercios, productos u ofertas..."
-                className="flex-1 px-4 py-2 text-sm text-text outline-none"
+                className="flex-1 px-4 py-2.5 text-sm text-text outline-none"
               />
               <button
                 type="submit"
@@ -53,7 +53,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="#"
-              className="bg-accent text-white font-semibold px-4 py-2 rounded-lg hover:bg-accent-dark transition-colors"
+              className="bg-accent text-text font-semibold px-4 py-2 rounded-lg hover:bg-accent-dark transition-colors"
             >
               Publica tu comercio
             </Link>

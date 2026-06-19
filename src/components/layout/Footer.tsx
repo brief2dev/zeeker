@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
         <div className="col-span-2 sm:col-span-1">
           <p className="font-extrabold text-lg mb-2">
-            Comercios<span className="text-accent">Yuc</span>
+            <span className="text-accent">Zeekers</span>
           </p>
           <p className="text-white/60">
-            Conectando el comercio local de Mérida con más clientes cada día.
+            Conectando el comercio local de Ticul con más clientes cada día.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} ComerciosYuc — Mérida, Yucatán
+        © {new Date().getFullYear()} Zeekers — Ticul, Yucatán
       </div>
     </footer>
   );
