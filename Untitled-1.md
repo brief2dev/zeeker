@@ -1,6 +1,6 @@
 # File Tree: zeekeers
 
-**Generated:** 6/19/2026, 3:12:47 PM
+**Generated:** 6/19/2026, 4:20:33 PM
 **Root Path:** `c:\Users\Mariel Santos\Develop\nodesServer\zeekeers`
 
 ```
@@ -12,17 +12,20 @@
 │   └── window.svg
 ├── src
 │   ├── app
+│   │   ├── comercio
 │   │   ├── favicon.ico
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── comercio
 │   ├── components
-│   │   ├── Categorias.tsx
-│   │   ├── ComercioCard.tsx
-│   │   ├── ComerciosDestacados.tsx
-│   │   ├── Hero.tsx
-│   │   └── Navbar.tsx
+│   │   ├── home
+│   │   │   ├── Categorias.tsx
+│   │   │   ├── ComercioCard.tsx
+│   │   │   ├── ComerciosDestacados.tsx
+│   │   │   └── Hero.tsx
+│   │   └── layout
+│   │       └── Navbar.tsx
 │   ├── data
 │   │   └── mock-data.ts
 │   └── services
@@ -36,7 +39,6 @@
 ├── docker-compose.yml
 ├── dockerfile
 ├── eslint.config.mjs
-├── install.sh
 ├── next.config.ts
 ├── package-lock.json
 ├── package.json

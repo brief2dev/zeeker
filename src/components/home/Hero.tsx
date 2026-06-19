@@ -156,7 +156,7 @@ export default function Hero() {
           border-radius: 100px;
           padding: 0.35rem 1rem;
           font-size: 0.8rem;
-          color: #6ee7b7;
+          color: #6ebbe7;
           margin-bottom: 2rem;
           letter-spacing: 0.02em;
         }
@@ -165,7 +165,7 @@ export default function Hero() {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #6ee7b7;
+          background: #6ebbe7;
           animation: pulse 2s ease-in-out infinite;
         }
 
@@ -185,7 +185,7 @@ export default function Hero() {
         }
 
         .hero-accent {
-          color: #6ee7b7;
+          color: #6ebbe7;
         }
 
         .hero-subtitle {
@@ -240,7 +240,7 @@ export default function Hero() {
 
         .cursor {
           display: inline-block;
-          color: #6ee7b7;
+          color: #6ebbe7;
           font-weight: 300;
           animation: blink 1s step-end infinite;
           margin-left: 1px;
@@ -252,7 +252,7 @@ export default function Hero() {
         }
 
         .search-btn {
-          background: #6ee7b7;
+          background: #6ebbe7;
           color: #0a0a0f;
           border: none;
           border-radius: 10px;
@@ -266,7 +266,7 @@ export default function Hero() {
         }
 
         .search-btn:hover {
-          background: #a7f3d0;
+          background: #6ebbe7;
           transform: translateY(-1px);
         }
 

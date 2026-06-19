@@ -1,6 +1,7 @@
 "use client";
 
-import { Comercio } from "../data/mock-data";
+import { Comercio } from "../../data/mock-data";
+import Link from "next/link";
 
 const BADGE_STYLES: Record<string, { bg: string; color: string }> = {
   Top: { bg: "rgba(245,158,11,0.15)", color: "#F59E0B" },
@@ -35,10 +36,13 @@ function StarRating({ value }: { value: number }) {
 
 export default function ComercioCard({ comercio }: Props) {
   const badge = comercio.badge ? BADGE_STYLES[comercio.badge] : null;
-
   return (
-    <article className="card">
-      <div className="card-top">
+    <Link
+      href={`/comercios/${comercio.slug}`}
+      className="card-link"
+    >
+      <article className="card">
+        <div className="card-top">
         <div className="card-emoji">{comercio.imagen}</div>
         <div className="card-meta-top">
           {badge && comercio.badge && (
@@ -151,7 +155,7 @@ export default function ComercioCard({ comercio }: Props) {
 
         .card-status.open {
           background: rgba(52, 211, 153, 0.1);
-          color: #34d399;
+          color: #6ebbe7;
         }
 
         .card-status.closed {
@@ -170,7 +174,7 @@ export default function ComercioCard({ comercio }: Props) {
         .card-category {
           font-size: 0.72rem;
           font-weight: 600;
-          color: #6ee7b7;
+          color: #6ebbe7;
           text-transform: uppercase;
           letter-spacing: 0.08em;
         }
@@ -273,7 +277,7 @@ export default function ComercioCard({ comercio }: Props) {
           font-family: 'Syne', sans-serif;
           font-size: 0.82rem;
           font-weight: 700;
-          color: #6ee7b7;
+          color: #6ebbe7;
           background: rgba(110, 231, 183, 0.08);
           border: 1px solid rgba(110, 231, 183, 0.15);
           border-radius: 8px;
@@ -287,5 +291,6 @@ export default function ComercioCard({ comercio }: Props) {
         }
       `}</style>
     </article>
+    </Link>
   );
 }

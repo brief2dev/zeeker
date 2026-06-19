@@ -1,5 +1,6 @@
 export interface Comercio {
   id: string;
+  slug?: string;
   nombre: string;
   categoria: string;
   descripcion: string;
@@ -25,6 +26,7 @@ export interface Categoria {
 export const COMERCIOS_DESTACADOS: Comercio[] = [
   {
     id: "1",
+    slug: "taquería_el_jaguar",
     nombre: "Taquería El Jaguar",
     categoria: "Comida",
     descripcion: "Tacos de cochinita pibil y panuchos auténticos del centro de Mérida, receta familiar de tres generaciones.",
@@ -39,6 +41,7 @@ export const COMERCIOS_DESTACADOS: Comercio[] = [
   },
   {
     id: "2",
+    slug: "vintage_y_co",
     nombre: "Vintage & Co.",
     categoria: "Moda",
     descripcion: "Ropa vintage seleccionada a mano, accesorios únicos y piezas de época de los 70s y 80s.",
@@ -53,6 +56,7 @@ export const COMERCIOS_DESTACADOS: Comercio[] = [
   },
   {
     id: "3",
+    slug: "café_cenote",
     nombre: "Café Cenote",
     categoria: "Café",
     descripcion: "Especialidad en café de origen mexicano, ambiente relajado con vista al jardín interior.",
@@ -67,6 +71,7 @@ export const COMERCIOS_DESTACADOS: Comercio[] = [
   },
   {
     id: "4",
+    slug: "librería_papel_tinta",
     nombre: "Librería Papel & Tinta",
     categoria: "Cultura",
     descripcion: "Libros nuevos y de segunda mano, zines independientes y eventos literarios cada semana.",
@@ -81,6 +86,7 @@ export const COMERCIOS_DESTACADOS: Comercio[] = [
   },
   {
     id: "5",
+    slug: "studio_kaan",
     nombre: "Studio Kaan",
     categoria: "Bienestar",
     descripcion: "Yoga, meditación y terapias holísticas. Clases matutinas y vespertinas con instructores certificados.",
@@ -95,6 +101,7 @@ export const COMERCIOS_DESTACADOS: Comercio[] = [
   },
   {
     id: "6",
+    slug: "ferretería_don_pepe",
     nombre: "Ferretería Don Pepe",
     categoria: "Hogar",
     descripcion: "Todo para tu hogar y taller. Herramientas, materiales de construcción y asesoría personalizada.",

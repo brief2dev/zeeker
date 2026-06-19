@@ -70,7 +70,7 @@ export default function Navbar() {
         .logo-mark {
           width: 32px;
           height: 32px;
-          background: #6ee7b7;
+          background: #6ebbe7;
           color: #0a0a0f;
           border-radius: 8px;
           display: flex;
@@ -142,7 +142,7 @@ export default function Navbar() {
           font-size: 0.85rem;
           font-weight: 700;
           color: #0a0a0f;
-          background: #6ee7b7;
+          background: #6ebbe7;
           border: none;
           padding: 0.5rem 1rem;
           border-radius: 8px;
