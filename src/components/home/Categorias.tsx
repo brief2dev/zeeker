@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CATEGORIAS } from "../lib/mock-data";
+import { CATEGORIAS } from "../../data/mock-data";
 
 export default function Categorias() {
   const [hovered, setHovered] = useState<string | null>(null);

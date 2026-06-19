@@ -1,6 +1,6 @@
 "use client";
 
-import { Comercio } from "../lib/mock-data";
+import { Comercio } from "../data/mock-data";
 
 const BADGE_STYLES: Record<string, { bg: string; color: string }> = {
   Top: { bg: "rgba(245,158,11,0.15)", color: "#F59E0B" },

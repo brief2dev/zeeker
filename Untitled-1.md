@@ -1,27 +1,37 @@
 # File Tree: zeekeers
 
-**Generated:** 6/18/2026, 8:19:57 AM
+**Generated:** 6/19/2026, 3:12:47 PM
 **Root Path:** `c:\Users\Mariel Santos\Develop\nodesServer\zeekeers`
 
 ```
-├── app
-│   ├── favicon.ico
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-├── logs
-│   └── nextjs
 ├── public
 │   ├── file.svg
 │   ├── globe.svg
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
+├── src
+│   ├── app
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── comercio
+│   ├── components
+│   │   ├── Categorias.tsx
+│   │   ├── ComercioCard.tsx
+│   │   ├── ComerciosDestacados.tsx
+│   │   ├── Hero.tsx
+│   │   └── Navbar.tsx
+│   ├── data
+│   │   └── mock-data.ts
+│   └── services
 ├── .gitattributes
 ├── .gitignore
 ├── AGENTS.md
 ├── CLAUDE.md
 ├── README.md
+├── Untitled-1.md
 ├── Workstation.code-workspace
 ├── docker-compose.yml
 ├── dockerfile

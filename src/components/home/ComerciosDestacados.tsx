@@ -1,5 +1,5 @@
 "use client";
-import { COMERCIOS_DESTACADOS } from "../lib/mock-data";
+import { COMERCIOS_DESTACADOS } from "../../data/mock-data";
 import ComercioCard from "./ComercioCard";
 
 export default function ComerciosDestacados() {
