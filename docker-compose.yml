@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  nextjs:
+    build: .
+    container_name: ${PROJECT}_${MUNICIPIO_CODE}_nextjs
+    volumes:
+      - ./logs/nextjs:/app/logs
+    env_file:
+      - ./app/.env.${ENV}
+    environment:
+      NODE_ENV: ${ENV}
+    restart: unless-stopped
+    networks:
+      - infra_net
+    labels:
+      - "project=${PROJECT}"
+      - "municipio=${MUNICIPIO_CODE}"
+      - "municipio_nombre=${MUNICIPIO_NAME}"
+      - "service=frontend"
+      - "env=${ENV}"
+
+networks:
+  infra_net:
+    external: true
