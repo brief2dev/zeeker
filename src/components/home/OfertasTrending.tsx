@@ -38,7 +38,8 @@ export default function OfertasTrending({
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-8">
+    <section className="mx-auto max-w-7.5xl px-12 py-10">
+      <div className="rounded-xl bg-surface border border-border shadow-[0_20px_60px_rgba(0,0,0,0.25)] p-8">
       <SectionHeader
         id="ofertas"
         eyebrow="No te lo pierdas"
@@ -59,7 +60,6 @@ export default function OfertasTrending({
           </div>
         }
       />
-
       <div
         ref={scrollRef}
         onScroll={onScroll}
@@ -150,6 +150,8 @@ export default function OfertasTrending({
           );
         })}
       </div>
+      </div>
     </section>
+
   );
 }
