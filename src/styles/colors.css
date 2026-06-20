@@ -15,8 +15,8 @@
 
 @theme {
   /* Marca / acciones principales — inspirado en el achiote yucateco */
-  --color-primary: #8533af;
-  --color-primary-dark: #9b3f22;
+  --color-primary: #9F2B68;
+  --color-primary-dark: #802355;
   --color-primary-light: #e8c7b8;
 
   /* Acciones secundarias / enlaces — inspirado en los cenotes */
@@ -26,7 +26,7 @@
 
   /* Ofertas, descuentos, badges — inspirado en el maíz */
   --color-accent: #3483fa;
-  --color-accent-dark: #d6891c;
+  --color-accent-dark: #4f90f7;
 
   /* Fondos y superficies */
   --color-background: #ebebeb;

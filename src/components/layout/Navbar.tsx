@@ -13,8 +13,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <span className="text-3xl">🌿</span>
-            <span className="font-extrabold text-xl tracking-tight">
-              Comercios<span className="text-accent">Yuc</span>
+            <span className="font-extrabold text-xl tracking-tight"><span className="text-white">Zeekers</span>
             </span>
           </Link>
 
@@ -53,7 +52,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="#"
-              className="bg-accent text-text font-semibold px-4 py-2 rounded-lg hover:bg-accent-dark transition-colors"
+              className="bg-accent text-white font-semibold px-4 py-2 rounded-lg hover:bg-accent-dark transition-colors"
             >
               Publica tu comercio
             </Link>
@@ -96,9 +95,8 @@ export default function Navbar() {
             <Link
               href="#"
               onClick={() => setMenuAbierto(false)}
-              className="bg-accent text-text font-semibold px-4 py-2 rounded-lg text-center"
-            >
-              Publica tu comercio
+              className="bg-accent text-white font-semibold px-4 py-2 rounded-lg text-center"
+            >Publica tu comercio
             </Link>
           </div>
         )}
