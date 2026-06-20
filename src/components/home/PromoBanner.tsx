@@ -38,7 +38,7 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
           <Link
             key={banner.id}
             href={banner.href}
-            className="relative w-full shrink-0 h-[460px] sm:h-[580px]"
+            className="relative w-full shrink-0 h-[460px] sm:h-[500px]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -71,7 +71,7 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
       </div>
 
       {/* Flechas de navegación */}
-      {banners.length > 1 && (
+      {/* {banners.length > 1 && (
         <>
           <button
             type="button"
@@ -94,19 +94,19 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
             </svg>
           </button>
         </>
-      )}
+      )} */}
 
       {/* Indicadores */}
       {banners.length > 1 && (
-        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5">
+        <div className="absolute top-4 left-0 right-0 flex justify-center gap-2.5">
           {banners.map((banner, indice) => (
             <button
               key={banner.id}
               type="button"
               aria-label={`Ir al banner ${indice + 1}`}
               onClick={() => setActivo(indice)}
-              className={`h-1.5 rounded-full transition-all ${
-                indice === activo ? "w-6 bg-accent" : "w-3 bg-white/60"
+              className={`h-2.5 rounded-full transition-all ${
+                indice === activo ? "w-6 bg-surface" : "w-3 bg-white/60"
               }`}
             />
           ))}

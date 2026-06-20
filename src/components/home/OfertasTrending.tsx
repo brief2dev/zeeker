@@ -12,7 +12,10 @@ type OfertasTrendingProps = {
 
 const NUM_PUNTOS = 3;
 
-export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingProps) {
+export default function OfertasTrending({
+  ofertas,
+  comercios,
+}: OfertasTrendingProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [puntoActivo, setPuntoActivo] = useState(0);
 
@@ -28,7 +31,10 @@ export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingP
     const el = scrollRef.current;
     if (!el) return;
     const maxScroll = el.scrollWidth - el.clientWidth;
-    el.scrollTo({ left: (maxScroll * indice) / (NUM_PUNTOS - 1), behavior: "smooth" });
+    el.scrollTo({
+      left: (maxScroll * indice) / (NUM_PUNTOS - 1),
+      behavior: "smooth",
+    });
   }
 
   return (
@@ -46,9 +52,8 @@ export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingP
                 type="button"
                 aria-label={`Ir a la página ${indice + 1}`}
                 onClick={() => irAPunto(indice)}
-                className={`h-2 w-2 rounded-full transition-colors ${
-                  indice === puntoActivo ? "bg-secondary" : "bg-border"
-                }`}
+                className={`h-2 w-2 rounded-full transition-colors ${indice === puntoActivo ? "bg-secondary" : "bg-border"
+                  }`}
               />
             ))}
           </div>
@@ -61,8 +66,11 @@ export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingP
         className="flex gap-4 overflow-x-auto scrollbar-hidden pb-1 -mx-px"
       >
         {ofertas.map((oferta) => {
-          const comercio = comercios.find((c) => c.slug === oferta.comercioSlug);
-          const precioFinal = oferta.precioOriginal * (1 - oferta.descuento / 100);
+          const comercio = comercios.find(
+            (c) => c.slug === oferta.comercioSlug,
+          );
+          const precioFinal =
+            oferta.precioOriginal * (1 - oferta.descuento / 100);
           const gratis = precioFinal <= 0;
           const [enteros, centavos] = precioFinal.toFixed(2).split(".");
 
@@ -114,7 +122,9 @@ export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingP
                 {oferta.cuotas && (
                   <p className="text-xs text-success font-medium mt-1.5">
                     {oferta.cuotas.meses} meses sin intereses de $
-                    {oferta.cuotas.monto.toLocaleString("es-MX", { minimumFractionDigits: 2 })}
+                    {oferta.cuotas.monto.toLocaleString("es-MX", {
+                      minimumFractionDigits: 2,
+                    })}
                   </p>
                 )}
 
@@ -124,7 +134,12 @@ export default function OfertasTrending({ ofertas, comercios }: OfertasTrendingP
                   </span>
                 ) : (
                   <p className="text-xs text-success mt-1.5 flex items-center gap-1">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z" />
                     </svg>
                     {oferta.entrega}

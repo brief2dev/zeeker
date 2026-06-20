@@ -1,7 +1,9 @@
 export type Categoria = {
+  descripcion: string;
   slug: string;
   nombre: string;
   icono: string;
+
 };
 
 export type Comercio = {
@@ -38,14 +40,14 @@ export type Banner = {
 };
 
 export const categorias: Categoria[] = [
-  { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️" },
-  { slug: "cafeterias", nombre: "Cafeterías", icono: "☕" },
-  { slug: "panaderias", nombre: "Panaderías", icono: "🥖" },
-  { slug: "ropa", nombre: "Ropa", icono: "👕" },
-  { slug: "farmacias", nombre: "Farmacias", icono: "💊" },
-  { slug: "ferreterias", nombre: "Ferreterías", icono: "🔧" },
-  { slug: "artesanias", nombre: "Artesanías", icono: "🧶" },
-  { slug: "tecnologia", nombre: "Tecnología", icono: "💻" },
+  { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️", descripcion: "Restaurantes con comida tradicional y moderna" },
+  { slug: "cafeterias", nombre: "Cafeterías", icono: "☕", descripcion: "Cafeterías con café de especialidad y postres" },
+  { slug: "panaderias", nombre: "Panaderías", icono: "🥖", descripcion: "Panaderías con panes artesanales y repostería" },
+  { slug: "ropa", nombre: "Ropa", icono: "👕", descripcion: "Tiendas de ropa con diseños únicos" },
+  { slug: "farmacias", nombre: "Farmacias", icono: "💊", descripcion: "Farmacias con servicios médicos y productos de salud" },
+  { slug: "ferreterias", nombre: "Ferreterías", icono: "🔧", descripcion: "Ferreterías con herramientas y materiales para construcción" },
+  { slug: "artesanias", nombre: "Artesanías", icono: "🧶", descripcion: "Artesanías con diseños únicos y materiales de calidad" },
+  { slug: "tecnologia", nombre: "Tecnología", icono: "💻", descripcion: "Tiendas de tecnología con los últimos productos" },
 ];
 
 export const comercios: Comercio[] = [

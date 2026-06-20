@@ -42,7 +42,7 @@ export default function CarouselArrows({ scrollRef, step = 320 }: CarouselArrows
           type="button"
           aria-label="Anterior"
           onClick={() => mover(-1)}
-          className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 h-22 w-22 items-center justify-center rounded-full bg-surface border border-border shadow-md text-text hover:bg-background transition-colors"
+          className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 h-22 w-22 items-center justify-center rounded-full bg-surface border border-border shadow-md text-accent hover:bg-background transition-colors"
         >
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M15 18l-6-6 6-6" />
@@ -54,7 +54,7 @@ export default function CarouselArrows({ scrollRef, step = 320 }: CarouselArrows
           type="button"
           aria-label="Siguiente"
           onClick={() => mover(1)}
-          className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 h-22 w-22 items-center justify-center rounded-full bg-surface border border-border shadow-md text-text hover:bg-background transition-colors"
+          className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 h-22 w-22 items-center justify-center rounded-full bg-surface border border-border shadow-md text-accent hover:bg-background transition-colors"
         >
           <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M9 6l6 6-6 6" />

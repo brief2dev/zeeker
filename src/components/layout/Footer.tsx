@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
+      <div className="border-t border-white/10 py-4 text-center text-xs text-text-dark">
         © {new Date().getFullYear()} Zeekers — Ticul, Yucatán
       </div>
     </footer>
