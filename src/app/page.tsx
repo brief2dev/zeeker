@@ -17,11 +17,10 @@ export default function Home() {
   const comercios = getComercios();
   const comerciosDestacados = getComerciosDestacados();
 
-  
   return (
     <>
       <PromoBanner banners={banners} />
-      <Categorias categorias={categorias} />
+      <Categorias categorias={categorias} comercios={comercios} />
       <OfertasTrending ofertas={ofertas} comercios={comercios} />
       <ComerciosDestacados comercios={comerciosDestacados} />
     </>

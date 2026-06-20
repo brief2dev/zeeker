@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { Banner } from "../../data/mock-data";
@@ -21,8 +20,16 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
 
   if (banners.length === 0) return null;
 
+  function anterior() {
+    setActivo((actual) => (actual - 1 + banners.length) % banners.length);
+  }
+
+  function siguiente() {
+    setActivo((actual) => (actual + 1) % banners.length);
+  }
+
   return (
-    <section className="relative w-full overflow-hidden bg-surface">
+    <section className="relative w-full overflow-hidden bg-background">
       <div
         className="flex transition-transform duration-500 ease-out"
         style={{ transform: `translateX(-${activo * 100}%)` }}
@@ -31,7 +38,7 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
           <Link
             key={banner.id}
             href={banner.href}
-            className="relative w-full shrink-0 aspect-[16/7] sm:aspect-[16/4.5]"
+            className="relative w-full shrink-0 h-[420px] sm:h-[520px]"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -39,7 +46,11 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
               alt={banner.titulo}
               className="absolute inset-0 h-full w-full object-cover"
             />
+            {/* Difuminado lateral para legibilidad del texto */}
             <div className="absolute inset-0 bg-gradient-to-r from-text/85 via-text/35 to-transparent" />
+            {/* Difuminado inferior: la imagen se desvanece hacia el fondo de la página */}
+            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-background" />
+
             <div className="absolute inset-0 flex items-center">
               <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
                 <div className="flex flex-col items-start gap-2 max-w-md">
@@ -58,6 +69,32 @@ export default function PromoBanner({ banners }: PromoBannerProps) {
           </Link>
         ))}
       </div>
+
+      {/* Flechas de navegación */}
+      {banners.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Banner anterior"
+            onClick={anterior}
+            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-10 h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-text shadow-md transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            aria-label="Siguiente banner"
+            onClick={siguiente}
+            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-10 h-9 w-9 sm:h-10 sm:w-10 flex items-center justify-center rounded-full bg-white/80 hover:bg-white text-text shadow-md transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
+          </button>
+        </>
+      )}
 
       {/* Indicadores */}
       {banners.length > 1 && (

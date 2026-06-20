@@ -13,7 +13,7 @@ export default function ComerciosDestacados({ comercios }: ComerciosDestacadosPr
         id="destacados"
         eyebrow="Comunidad local"
         title="Comercios destacados"
-        description="Negocios recomendados por la comunidad en Ticul"
+        description="Negocios recomendados por la comunidad en Mérida"
       />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
