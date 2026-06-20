@@ -13,7 +13,7 @@ export default function Categorias({ categorias, comercios }: CategoriasProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative z-20 mx-auto max-w-6xl px-4 -mt-24 pb-8">
+    <section className="relative z-20 mx-auto max-w-6xl px-4 -mt-42 pb-2">
       <h2 className="text-xl sm:text-2xl font-bold text-text mb-4">Categorías</h2>
 
       <div className="relative">
