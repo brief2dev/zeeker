@@ -3,14 +3,22 @@ import {
   categorias,
   comercios,
   ofertas,
+  publicidad,
   type Banner,
+  type BannerPublicidadComercio,
   type Categoria,
   type Comercio,
   type Oferta,
 } from "../data/mock-data";
 
 // Esta capa existe para que, el día de mañana, sustituyas el mock-data
-// por llamadas reales (fetch/API) sin tener que tocar los componentes.
+// por llamadas reales (fetch/API) sin tener que tocar los componentes.\
+
+
+
+export function getBannerPublicidad(): BannerPublicidadComercio[] {
+  return publicidad;
+}
 
 export function getCategorias(): Categoria[] {
   return categorias;

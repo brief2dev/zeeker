@@ -36,7 +36,7 @@ export default function Categorias({ categorias, comercios }: CategoriasProps) {
                 href="#destacados"
                 className="group snap-start shrink-0 w-50 min-h-[330px] bg-surface border border-border rounded-md p-6 flex flex-col items-center text-center gap-4 hover:shadow-md hover:border-secondary/40 transition-all"
               >
-                <span className="flex h-29 w-29 items-center justify-center rounded-full bg-primary text-6xl group-hover:scale-105 transition-transform">
+                <span className="flex h-29 w-29 items-center justify-center rounded-full text-6xl group-hover:scale-105 transition-transform">
                   {categoria.icono}
                 </span>
                 <span className="font-semibold text-sm text-text leading-snug">

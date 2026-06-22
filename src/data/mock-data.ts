@@ -39,6 +39,28 @@ export type Banner = {
   imagen: string;
 };
 
+
+export type BannerPublicidadComercio = {
+  id: string;
+  nombre: string;
+  slug: string;
+  categoria: string;
+  imagen: string;
+  banerComercio: string;
+  titulo: string;
+};
+
+export type productoDestacado = {
+  id: string;
+  categoria: string;
+  empresa: string;
+  imagen: string;
+  titulo: string;
+  precio: number;
+  descuentoPorcentaje: number;
+
+};
+
 export const categorias: Categoria[] = [
   { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️", descripcion: "Restaurantes con comida tradicional y moderna" },
   { slug: "cafeterias", nombre: "Cafeterías", icono: "☕", descripcion: "Cafeterías con café de especialidad y postres" },
@@ -242,5 +264,35 @@ export const banners: Banner[] = [
     cta: "Publica tu comercio",
     href: "#",
     imagen: "https://picsum.photos/seed/banner-publica/1200/420",
+  },
+];
+
+export const publicidad: BannerPublicidadComercio[] = [
+  {
+    id: "banner-1",
+    nombre: "Apoya el comercio local",
+    slug: "Descubre-negocios",
+    categoria: "zapato",
+    imagen: "https://picsum.photos/seed/banner-comercio-local/1200/420",
+    banerComercio: "https://picsum.photos/seed/banner-comercio-local/640/420",
+    titulo: "Apoya el comercio local",
+  },
+  {
+    id: "banner-2",
+    nombre: "Hasta 50% de descuento",
+    slug: "Ofertas-semana",
+    categoria: "artesania",
+    imagen: "https://picsum.photos/seed/banner-ofertas/1200/420",
+    banerComercio: "https://picsum.photos/seed/banner-ofertas/640/420",
+    titulo: "Hasta 50% de descuento",
+  },
+  {
+    id: "banner-3",
+    nombre: "¿Tienes un negocio?",
+    slug: "Publícalo-gratis",
+    categoria: "comida",
+    imagen: "https://picsum.photos/seed/banner-publica/1200/420",
+    banerComercio: "https://picsum.photos/seed/banner-publica/640/420",
+    titulo: "¿Tienes un negocio?",
   },
 ];
