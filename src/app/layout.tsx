@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ComerciosYuc — Comercio local de Mérida",
-  description: "Descubre, apoya y descubre ofertas de comercios locales en Mérida, Yucatán.",
+  title: "ComerciosYuc — Comercio local de Ticul",
+  description: "Descubre, apoya y descubre ofertas de comercios locales en Ticul, Yucatán.",
 };
 
 export default function RootLayout({

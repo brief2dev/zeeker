@@ -12,7 +12,6 @@ type CategoriasProps = {
 
 export default function Categorias({ categorias, comercios }: CategoriasProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
-
   return (
     <section className="relative z-20 mx-auto max-w-7.5xl px-12 -mt-42 pb-2">
       {/* <SectionHeader
