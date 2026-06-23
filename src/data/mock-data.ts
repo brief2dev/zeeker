@@ -1,9 +1,8 @@
 export type Categoria = {
-  descripcion: string;
   slug: string;
   nombre: string;
   icono: string;
-
+  descripcion: string;
 };
 
 export type Comercio = {
@@ -19,6 +18,7 @@ export type Comercio = {
 
 export type Oferta = {
   id: string;
+  slug: string;
   comercioSlug: string;
   titulo: string;
   precioOriginal: number;
@@ -39,37 +39,27 @@ export type Banner = {
   imagen: string;
 };
 
-
 export type BannerPublicidadComercio = {
   id: string;
-  nombre: string;
-  slug: string;
-  categoria: string;
-  imagen: string;
+  comercioSlug: string;
+  etiqueta: string;
+  titulo: string;
+  subtitulo: string;
+  cta: string;
+  variante: "primary" | "secondary";
   banerComercio: string;
-  titulo: string;
-};
-
-export type productoDestacado = {
-  id: string;
-  categoria: string;
-  empresa: string;
   imagen: string;
-  titulo: string;
-  precio: number;
-  descuentoPorcentaje: number;
-
 };
 
 export const categorias: Categoria[] = [
-  { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️", descripcion: "Restaurantes con comida tradicional y moderna" },
-  { slug: "cafeterias", nombre: "Cafeterías", icono: "☕", descripcion: "Cafeterías con café de especialidad y postres" },
-  { slug: "panaderias", nombre: "Panaderías", icono: "🥖", descripcion: "Panaderías con panes artesanales y repostería" },
-  { slug: "ropa", nombre: "Ropa", icono: "👕", descripcion: "Tiendas de ropa con diseños únicos" },
-  { slug: "farmacias", nombre: "Farmacias", icono: "💊", descripcion: "Farmacias con servicios médicos y productos de salud" },
-  { slug: "ferreterias", nombre: "Ferreterías", icono: "🔧", descripcion: "Ferreterías con herramientas y materiales para construcción" },
-  { slug: "artesanias", nombre: "Artesanías", icono: "🧶", descripcion: "Artesanías con diseños únicos y materiales de calidad" },
-  { slug: "tecnologia", nombre: "Tecnología", icono: "💻", descripcion: "Tiendas de tecnología con los últimos productos" },
+  { slug: "restaurantes", nombre: "Restaurantes", icono: "🍽️", descripcion: "Negocios que ofrecen servicios de comida y bebida" },
+  { slug: "cafeterias", nombre: "Cafeterías", icono: "☕", descripcion: "Negocios que ofrecen servicios de café y bebidas calientes" },
+  { slug: "panaderias", nombre: "Panaderías", icono: "🥖", descripcion: "Negocios que ofrecen servicios de panadería y repostería" },
+  { slug: "ropa", nombre: "Ropa", icono: "👕", descripcion: "Negocios que ofrecen servicios de venta de ropa" },
+  { slug: "farmacias", nombre: "Farmacias", icono: "💊", descripcion: "Negocios que ofrecen servicios de venta de medicamentos y productos de salud" },
+  { slug: "ferreterias", nombre: "Ferreterías", icono: "🔧", descripcion: "Negocios que ofrecen servicios de venta de herramientas y materiales para la construcción" },
+  { slug: "artesanias", nombre: "Artesanías", icono: "🧶", descripcion: "Negocios que ofrecen servicios de venta de artesanías y productos hechos a mano" },
+  { slug: "tecnologia", nombre: "Tecnología", icono: "💻", descripcion: "Negocios que ofrecen servicios de venta y reparación de equipos tecnológicos" },
 ];
 
 export const comercios: Comercio[] = [
@@ -121,7 +111,7 @@ export const comercios: Comercio[] = [
     imagen: "https://picsum.photos/seed/farmacia-del-paseo/640/420",
     rating: 4.4,
     ubicacion: "Paseo de Montejo, Mérida",
-    destacado: true,
+    destacado: false,
   },
   {
     slug: "ferreteria-yum-kin",
@@ -131,7 +121,7 @@ export const comercios: Comercio[] = [
     imagen: "https://picsum.photos/seed/ferreteria-yum-kin/640/420",
     rating: 4.3,
     ubicacion: "Col. México, Mérida",
-    destacado: true,
+    destacado: false,
   },
   {
     slug: "boutique-xtabay",
@@ -151,13 +141,14 @@ export const comercios: Comercio[] = [
     imagen: "https://picsum.photos/seed/tech-yuc/640/420",
     rating: 4.2,
     ubicacion: "Altabrisa, Mérida",
-    destacado: true,
+    destacado: false,
   },
 ];
 
 export const ofertas: Oferta[] = [
   {
     id: "of-1",
+    slug: "comida-del-dia-2x1-la-socorrito",
     comercioSlug: "la-socorrito",
     titulo: "Comida del día 2x1",
     precioOriginal: 180,
@@ -168,6 +159,7 @@ export const ofertas: Oferta[] = [
   },
   {
     id: "of-2",
+    slug: "docena-de-marquesitas",
     comercioSlug: "panificadora-montejo",
     titulo: "Docena de marquesitas",
     precioOriginal: 150,
@@ -178,6 +170,7 @@ export const ofertas: Oferta[] = [
   },
   {
     id: "of-3",
+    slug: "cafe-de-especialidad-mas-postre",
     comercioSlug: "cafe-cenote",
     titulo: "Café de especialidad + postre del día",
     precioOriginal: 120,
@@ -188,6 +181,7 @@ export const ofertas: Oferta[] = [
   },
   {
     id: "of-4",
+    slug: "temporada-de-rebajas-xtabay",
     comercioSlug: "boutique-xtabay",
     titulo: "Temporada de rebajas en ropa de diseñador local",
     precioOriginal: 899,
@@ -200,41 +194,12 @@ export const ofertas: Oferta[] = [
   },
   {
     id: "of-5",
+    slug: "revision-y-diagnostico-tech-yuc",
     comercioSlug: "tech-yuc",
     titulo: "Revisión y diagnóstico de tu equipo",
     precioOriginal: 250,
     descuento: 100,
     entrega: "Servicio en sucursal",
-    imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
-    vigenciaHasta: "2026-06-22",
-  },
-  {
-    id: "of-6",
-    comercioSlug: "ferreteria-yum-kin",
-    titulo: "Descuento en herramientas seleccionadas",
-    precioOriginal: 250,
-    descuento: 100,
-    entrega: "Servicio en sucursal",
-    imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
-    vigenciaHasta: "2026-06-22",
-  },
-  {
-    id: "of-7",
-    comercioSlug: "framacia-del-paseo",
-    titulo: "Consulta médica general",
-    precioOriginal: 250,
-    descuento: 100,
-    entrega: "Servicio en sucursal",
-    imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
-    vigenciaHasta: "2026-06-22",
-  },
-  {
-    id: "of-8",
-    comercioSlug: "cafeteria-del-paseo",
-    titulo: "Café de especialidad + postre del día",
-    precioOriginal: 250,
-    descuento: 100,
-    entrega: "Servicio envio a domicilio",
     imagen: "https://picsum.photos/seed/oferta-techyuc/480/320",
     vigenciaHasta: "2026-06-22",
   },
@@ -269,30 +234,47 @@ export const banners: Banner[] = [
 
 export const publicidad: BannerPublicidadComercio[] = [
   {
-    id: "banner-1",
-    nombre: "Apoya el comercio local",
-    slug: "Descubre-negocios",
-    categoria: "zapato",
-    imagen: "https://picsum.photos/seed/banner-comercio-local/1200/420",
-    banerComercio: "https://picsum.photos/seed/banner-comercio-local/640/420",
-    titulo: "Apoya el comercio local",
+    id: "premium-1",
+    comercioSlug: "la-socorrito",
+    etiqueta: "Comercio Premium",
+    titulo: "Sabor yucateco de toda la vida",
+    subtitulo: "Reserva tu mesa y vive 30 años de tradición en un solo platillo",
+    cta: "Ver comercio",
+    variante: "primary",
+    banerComercio: "https://picsum.photos/seed/logo-socorrito/120/120",
+    imagen: "https://picsum.photos/seed/premium-socorrito/800/420",
   },
   {
-    id: "banner-2",
-    nombre: "Hasta 50% de descuento",
-    slug: "Ofertas-semana",
-    categoria: "artesania",
-    imagen: "https://picsum.photos/seed/banner-ofertas/1200/420",
-    banerComercio: "https://picsum.photos/seed/banner-ofertas/640/420",
-    titulo: "Hasta 50% de descuento",
+    id: "premium-2",
+    comercioSlug: "telar-maya",
+    etiqueta: "Comercio Premium",
+    titulo: "Artesanía maya hecha a mano",
+    subtitulo: "Piezas únicas de bordado y hamacas tejidas por artesanas locales",
+    cta: "Ver comercio",
+    variante: "secondary",
+    banerComercio: "https://picsum.photos/seed/logo-telarmaya/120/120",
+    imagen: "https://picsum.photos/seed/premium-telarmaya/800/420",
   },
   {
-    id: "banner-3",
-    nombre: "¿Tienes un negocio?",
-    slug: "Publícalo-gratis",
-    categoria: "comida",
-    imagen: "https://picsum.photos/seed/banner-publica/1200/420",
-    banerComercio: "https://picsum.photos/seed/banner-publica/640/420",
-    titulo: "¿Tienes un negocio?",
+    id: "premium-3",
+    comercioSlug: "panificadora-montejo",
+    etiqueta: "Comercio Premium",
+    titulo: "Panadería artesanal con tradición",
+    subtitulo: "Disfruta de nuestras marquesitas y pan dulce recién horneado todos los días",
+    cta: "Ver comercio",
+    variante: "secondary",
+    banerComercio: "https://picsum.photos/seed/logo-telarmaya/120/120",
+    imagen: "https://picsum.photos/seed/premium-telarmaya/800/420",
+  },
+  {
+    id: "premium-4",
+    comercioSlug: "cafe-cenote",
+    etiqueta: "Comercio Premium",
+    titulo: "Café de especialidad + postre del día",
+    subtitulo: "Disfruta de nuestro café de especialidad y un postre del día en un ambiente relajado",
+    cta: "Ver comercio",
+    variante: "primary",
+    banerComercio: "https://picsum.photos/seed/logo-telarmaya/120/120",
+    imagen: "https://picsum.photos/seed/premium-telarmaya/800/420",
   },
 ];
